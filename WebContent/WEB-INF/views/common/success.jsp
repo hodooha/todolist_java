@@ -15,15 +15,15 @@
 			let movePath = "";
 			
 			switch(successCode){
-				case "insertMember" : 
+				case "insertUser" : 
 					successMessage = "회원 가입에 성공하셨습니다!";
 					movePath = "${ pageContext.servletContext.contextPath }";
 					break;
-				case "updateMember" : 
+				case "updateUser" : 
 					successMessage = "회원 정보 변경에 성공하셨습니다!";
-					movePath = "${ pageContext.servletContext.contextPath }/member/update";
+					movePath = "${ pageContext.servletContext.contextPath }/user/update";
 					break;
-				case "deleteMember" : 
+				case "deleteUser" : 
 					successMessage = "회원 탈퇴에 성공하셨습니다!";
 					movePath = "${ pageContext.servletContext.contextPath }/index.jsp";
 					break;

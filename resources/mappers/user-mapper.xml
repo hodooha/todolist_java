@@ -26,4 +26,17 @@
 		WHERE user_id = #{ userId }
 	</select>
 
+	<insert id="insertUser" parameterType="User">
+
+		INSERT
+		INTO USER
+		(user_id,
+		pw, name, phone)
+		VALUES (#{ userId }
+		, #{ pw }
+		, #{ name }
+		, #{ phone })
+
+	</insert>
+
 </mapper>

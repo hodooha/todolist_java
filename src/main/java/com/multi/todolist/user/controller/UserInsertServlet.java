@@ -59,11 +59,25 @@ public class UserInsertServlet extends HttpServlet {
 		userDTO.setPw(pw);
 		userDTO.setName(name);
 		userDTO.setPhone(phone);
+		String path="";
 		
-		int result = userService.insertUser(userDTO);
+		try {
+			int result = userService.insertUser(userDTO);
+			
+			if(result>0) {
+				path="/WEB-INF/views/common/success.jsp";
+				request.setAttribute("successCode", "insertMember");
+			} else {
+				path="/WEB-INF/views/common/failed.jsp";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			path="/WEB-INF/views/common/failed.jsp";
+		}
 		
 		System.out.println(userDTO);
-		
+		request.getRequestDispatcher(path).forward(request, response);
 
 	}
 

@@ -15,5 +15,10 @@ public class UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("userMapper.selectEncryptedPwd", userDTO);
 	}
+
+	public int insertUser(SqlSession sqlSession, UserDTO userDTO) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("userMapper.insertUser", userDTO);
+	}
 	
 }
